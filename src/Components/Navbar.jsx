@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { NavLink as RouterLink, useLocation } from "react-router-dom";
-import Logo from "../images/logo.png";
+import Logo from "../images/logo-1.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="Logo"
-              className="h-[5.3rem] md:w-[10.5rem] w-50"
+              className="h-[6.2rem] md:w-[9.8rem] w-50 md:pb-4 md:mt-[-0.2rem]"
             />
           </RouterLink>
         </div>

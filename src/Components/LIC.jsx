@@ -82,7 +82,7 @@ const LIC = () => {
 >
   {plans.map((plan, index) => (
     <SwiperSlide key={index}>
-      <div className="relative flex flex-col lg:flex-row items-center gap-8 pb-10 lg:pl-11">
+      <div className="relative flex flex-col lg:flex-row items-center gap-8 pb-10 lg:pl-12">
         <img
           src={plan.image}
           alt={`Plan ${index + 1}`}
