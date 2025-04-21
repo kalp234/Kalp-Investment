@@ -13,7 +13,7 @@ const Footer = () => {
           <p className="text-gray-800"><strong>Phone:</strong> +91-9898488243</p>
           <p className="text-gray-800"><strong>Hours:</strong> 10:00 AM - 7:00 PM, Mon - Sat</p>
         </div>
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start md:ml-[4rem] p-4">
+        <div className="w-full md:w-1/2 flex flex-col items-center lg:items-start md:ml-[4rem] p-4">
           <h4 className="text-xl font-bold mb-3 border-b-2 border-gray-600 inline-block pb-1">Find Us:</h4>
           <div className="border-2 border-gray-500 rounded-lg overflow-hidden shadow-md w-72 md:w-[25.3rem]">
             <iframe

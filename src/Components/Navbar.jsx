@@ -24,7 +24,7 @@ const Navbar = () => {
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
-    <div className="navbar flex bg-[#e3e6f3] justify-between items-center p-5 md:p-6 shadow-lg fixed top-0 left-0 z-[999] px-2 pr-4 md:pr-12  w-full">
+    <div className="navbar flex bg-[#e3e6f3] justify-between items-center p-5 md:p-0 lg:p-6 shadow-lg fixed top-0 left-0 z-[999] px-2 pr-4 md:pr-6 lg:pr-12  w-full">
       <div className="navbar-start">
         <div className="dropdown relative">
           <button
@@ -78,10 +78,11 @@ const Navbar = () => {
             className="btn btn-ghost text-xl flex items-center hover:bg-slate-300"
           >
             <img
-              src={Logo}
-              alt="Logo"
-              className="h-[6.2rem] md:w-[9.8rem] w-50 md:pb-4 md:mt-[-0.2rem]"
-            />
+  src={Logo}
+  alt="Logo"
+  className="h-[6.2rem] md:h-[5.5rem] lg:h-[6.2rem] md:w-[6rem] lg:w-[9.8rem] w-50 md:pb-4 md:mt-[-0.2rem] pb-2 mt-[-0.2rem]"
+/>
+
           </RouterLink>
         </div>
       </div>

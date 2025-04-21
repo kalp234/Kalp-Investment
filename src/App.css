@@ -85,3 +85,17 @@ li:focus, li:active, a:focus:not(:has(img)), a:active:not(:has(img)) {
     height: 30px;
   }
 }
+/* App.css */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-logo-img {
+    height: 4.5rem !important; /* slightly smaller for tab view */
+    margin-top: 0.2rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  .navbar {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}

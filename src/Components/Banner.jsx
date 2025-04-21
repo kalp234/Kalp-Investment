@@ -18,7 +18,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative w-full md:pt-[6.3rem] pt-[5rem]" name="Home">
+    <div className="relative w-full md:pt-[5.4rem] pt-[5rem]" name="Home">
       <div className="relative h-[26rem] overflow-hidden rounded-sm md:h-[83vh]">
       
         {currentIndex === 0 && (
