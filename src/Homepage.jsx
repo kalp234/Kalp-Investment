@@ -5,6 +5,7 @@ import Banner from './Components/Banner';
 import Aboutus from './Components/Aboutus';
 import Services from './Components/Services';
 import  Mutualfund  from './Components/Mutualfund';
+import LIC from './Components/LIC';
 import Footer from './Components/Footer'
 
 function Homepage() {
@@ -14,6 +15,7 @@ function Homepage() {
       <Aboutus/>
       <Services/>
       <Mutualfund/>
+<LIC/>
       <Footer />
     </div>
   );
