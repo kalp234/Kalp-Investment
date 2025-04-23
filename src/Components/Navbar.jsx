@@ -106,7 +106,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end pr-2 md:pr-0">
         <RouterLink
           to="/contact-me"
           className="btn btn-primary bg-blue-600 text-white hover:bg-blue-800 hover:text-white hover:scale-105 duration-200"

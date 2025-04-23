@@ -6,8 +6,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import LICBanner1 from "../images/scheme3.jpeg";
-import LICBanner2 from "../images/scheme2.jpeg";
-import LICBanner3 from "../images/scheme1.jpeg";
+import LICBanner2 from "../images/scheme.png";
+import LICBanner3 from "../images/scheme4.jpeg";
+import LICBanner4 from "../images/scheme5.jpeg";
 
 const plans = [
   {
@@ -33,14 +34,31 @@ const plans = [
     note: "✅ Markets corrected | Ideal time for lump sum investment",
   },
   {
-    image: LICBanner3,
-    title: "🧾 Retirement Pension Plan",
+    image: LICBanner3, // Replace with Jeevan Labh plan image if available
+    title: "🧾 LIC Jeevan Labh – Plan No. 736",
     features: [
-      "🏡 Assured monthly pension post retirement",
-      "🔁 Flexible payment terms: single/regular premium",
-      "👵 Secure old age with guaranteed life cover",
+      "📆 Pay for 16 years, relax for 9 years – Maturity at 25 years",
+      "📊 Starting daily saving: ₹32 gives ₹5.77 lakh maturity",
+      "💼 Total paid: ₹1,84,653 → Maturity: ₹5,77,500 | Profit: ₹3,92,847",
+      "🛡️ Insurance coverage: ₹2.2 lakh to ₹16.5 lakh depending on plan",
+      // "📈 Higher daily savings → Up to ₹43.31 lakh maturity",
     ],
-    note: "✅ Lifetime Pension | No Tax on Maturity",
+    note: "✅ Ideal for age 30 | High returns & risk cover | Trusted LIC Policy",
+  },
+  {
+    image: LICBanner4,
+    title: "🧾 LIC New Jeevan Shanti – Plan No. 758",
+    features: [
+      "🔁 A Single Premium Investment Plan",
+      "📆 Deferred Pension (1 to 5 years)",
+      "🧓 Entry Age: 30 to 79 years",
+      "📊 Guaranteed Annuity Rates: 6.75% to 10.61%",
+      // "👫 Choice of Single or Joint Life Pension",
+      // "👨‍👩‍👧 Same Pension for the second life too",
+      "💰 Minimum 105% of Purchase Price on Death",
+      // "📈 Extra 0.15% annuity rate for existing policyholders",
+    ],
+    note: "✅ Annuity Rates Revised w.e.f. 01.10.2024 | Ideal for Retirement Planning",
   },
 ];
 
@@ -57,7 +75,7 @@ const LIC = () => {
               LIC Plans
             </p>
           </div>
-          <div className="mt-10 pl-4 md:px-0 relative overflow-hidden">
+          <div className="mt-10 pl-1 md:pl-4 md:px-0 relative overflow-hidden">
             <Swiper
               modules={[Navigation, Pagination]}
               slidesPerView={1}
@@ -75,10 +93,10 @@ const LIC = () => {
                       <img
                         src={plan.image}
                         alt={`Plan ${index + 1}`}
-                        className="w-full md:w-[400px] h-[300px] object-cover rounded-xl shadow-md"
+                        className="w-[300px]  h-[350px] md:w-[400px] md:h-[390px] object-cover rounded-xl shadow-md"
                       />
                       <div className="text-gray-700 space-y-4 w-full">
-                        <h3 className="text-xl md:text-2xl font-semibold text-blue-900">
+                        <h3 className="text-xl md:text-2xl font-semibold text-blue-900 pl-[33px] md:pl-0">
                           {plan.title}
                         </h3>
                         <ul className="list-disc pl-6 space-y-2 text-md md:text-lg">

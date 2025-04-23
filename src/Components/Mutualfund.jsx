@@ -1,8 +1,24 @@
 import React from 'react';
 import M1 from "../images/MutualFunds.jpg";
 import Scheme1 from "../images/scheme1.jpeg";
-import Scheme2 from "../images/scheme2.jpeg";
+import Scheme2 from "../images/scheme2.png";
 import Scheme3 from "../images/scheme3.jpeg";
+
+// Array of featured mutual fund schemes
+const mutualFundSchemes = [
+  {
+    image: Scheme1,
+    title: "🏦 Axis Bluechip Fund – Large Cap Equity",
+  },
+  {
+    image: Scheme2,
+    title: "📈 SBI Small Cap Fund – High Growth Potential",
+  },
+  {
+    image: Scheme3,
+    title: "💼 HDFC Balanced Advantage Fund – Hybrid Strategy",
+  },
+];
 
 const Mutualfund = () => {
   return (
@@ -35,11 +51,21 @@ const Mutualfund = () => {
               🖼️ Featured Mutual Fund Schemes
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <img src={Scheme1} alt="Scheme 1" className="w-full h-[350px] object-cover rounded-xl shadow-md" />
-              <img src={Scheme2} alt="Scheme 2" className="w-full h-[350px] object-cover rounded-xl shadow-md" />
-              <img src={Scheme3} alt="Scheme 3" className="w-full h-[350px] object-cover rounded-xl shadow-md" />
+              {mutualFundSchemes.map((scheme, index) => (
+                <div key={index} className="text-center">
+                  <img
+                    src={scheme.image}
+                    alt={`Scheme ${index + 1}`}
+                    className="w-[300px] md:w-[400px] h-[350px] object-cover rounded-xl shadow-md"
+                  />
+                  <p className="mt-3 text-lg font-medium text-gray-700">
+                    {scheme.title}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
+
         </div>
       </div>
     </div>
