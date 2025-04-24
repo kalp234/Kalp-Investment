@@ -1,22 +1,24 @@
 import React from 'react';
 import M1 from "../images/MutualFunds.jpg";
 import Scheme1 from "../images/scheme1.jpeg";
-import Scheme2 from "../images/scheme2.png";
+import Scheme2 from "../images/scheme.png";
 import Scheme3 from "../images/scheme3.jpeg";
+import Scheme4 from "../images/scheme13.jpeg";
+import Scheme5 from "../images/scheme15.jpeg";
 
-// Array of featured mutual fund schemes
+
 const mutualFundSchemes = [
   {
     image: Scheme1,
-    title: "🏦 Axis Bluechip Fund – Large Cap Equity",
+    // title: "🏦 Axis Bluechip Fund – Large Cap Equity",
   },
   {
-    image: Scheme2,
-    title: "📈 SBI Small Cap Fund – High Growth Potential",
+    image: Scheme4,
+    // title: "📈 SBI Small Cap Fund – High Growth Potential",
   },
   {
-    image: Scheme3,
-    title: "💼 HDFC Balanced Advantage Fund – Hybrid Strategy",
+    image: Scheme5,
+    // title: "💼 HDFC Balanced Advantage Fund – Hybrid Strategy",
   },
 ];
 

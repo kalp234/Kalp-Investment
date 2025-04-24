@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import LICBanner1 from "../images/scheme3.jpeg";
 import LICBanner2 from "../images/scheme.png";
 import LICBanner3 from "../images/scheme4.jpeg";
-import LICBanner4 from "../images/scheme5.jpeg";
+import LICBanner4 from "../images/scheme5.jpg";
 
 const plans = [
   {
@@ -93,7 +93,7 @@ const LIC = () => {
                       <img
                         src={plan.image}
                         alt={`Plan ${index + 1}`}
-                        className="w-[300px]  h-[350px] md:w-[400px] md:h-[390px] object-cover rounded-xl shadow-md"
+                        className="w-[300px]  h-[350px] md:w-[400px] md:h-[390px] object-cover rounded-xl shadow-md border border-2 border-gray-600"
                       />
                       <div className="text-gray-700 space-y-4 w-full">
                         <h3 className="text-xl md:text-2xl font-semibold text-blue-900 pl-[33px] md:pl-0">
