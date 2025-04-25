@@ -76,6 +76,9 @@ const LIC = () => {
             </p>
           </div>
           <div className="mt-10 pl-1 md:pl-4 md:px-0 relative overflow-hidden">
+          <p className="md:hidden text-center text-sm text-gray-600 mb-4 animate-slide-left">
+    👉 Swipe left to view more plans<span className="ml-1 text-lg">»»</span>
+  </p>
             <Swiper
               modules={[Navigation, Pagination]}
               slidesPerView={1}
