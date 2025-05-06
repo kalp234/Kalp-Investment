@@ -6,7 +6,6 @@ import Scheme3 from "../images/scheme3.jpeg";
 import Scheme4 from "../images/scheme13.jpeg";
 import Scheme5 from "../images/scheme15.jpeg";
 
-
 const mutualFundSchemes = [
   {
     image: Scheme1,
@@ -50,9 +49,7 @@ const Mutualfund = () => {
 
           <div className="mt-12 md:pl-16 px-8 md:px-0">
             <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
-              {/* 🖼️ Featured Mutual Fund Schemes
-               */}
-               📈 Why Invest in Mutual Funds
+              📈 Why Invest in Mutual Funds
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {mutualFundSchemes.map((scheme, index) => (
@@ -70,6 +67,10 @@ const Mutualfund = () => {
             </div>
           </div>
 
+          {/* Disclaimer Section */}
+          <div className="mt-11 text-center text-gray-700 md:text-lg text-sm">
+            <p>"⚠️ Disclaimer: Mutual funds are subject to market risks. Please read the offer document carefully before investing. Past performance is not indicative of future results."</p>
+          </div>
         </div>
       </div>
     </div>

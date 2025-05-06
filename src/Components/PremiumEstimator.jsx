@@ -159,17 +159,16 @@ const PremiumEstimator = () => {
         <div>
           <label className="block mb-1 font-medium">Age</label>
           <input
-  type="number"
-  value={age === 0 ? "" : age}
-  min={config.minAge}
-  max={config.maxAge}
-  onChange={(e) => {
-    const val = e.target.value;
-    setAge(val === "" ? 0 : Number(val));
-  }}
-  className="w-full border rounded px-3 py-2"
-/>
-
+            type="number"
+            value={age === 0 ? "" : age}
+            min={config.minAge}
+            max={config.maxAge}
+            onChange={(e) => {
+              const val = e.target.value;
+              setAge(val === "" ? 0 : Number(val));
+            }}
+            className="w-full border rounded px-3 py-2"
+          />
         </div>
         <div>
           <label className="block mb-1 font-medium">Sum Assured (₹)</label>
@@ -218,6 +217,10 @@ const PremiumEstimator = () => {
           </p>
           <p>
             🎉 Estimated Maturity Amount: <strong>₹{result.maturity}</strong>
+          </p>
+          {/* Disclaimer */}
+          <p className="mt-4 text-sm text-gray-600">
+            <em>"This is an estimated value. Actual returns depend on LIC’s declared bonuses and terms of the specific policy."</em>
           </p>
         </div>
       )}

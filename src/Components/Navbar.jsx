@@ -87,7 +87,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="Logo"
-              className="h-[6.2rem] md:h-[5.5rem] lg:h-[6.2rem] md:w-[6rem] lg:w-[9.8rem] w-50 md:pb-4 md:mt-[-0.2rem] pb-2 mt-[-0.2rem]"
+              className="h-[6.2rem] md:h-[5.5rem] lg:h-[6.2rem] md:w-[6rem] lg:w-[9.2rem] w-50 md:pb-4 md:mt-[-0.2rem] pb-2 mt-[-0.2rem]"
             />
           </RouterLink>
         </div>
@@ -110,11 +110,21 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-    <div className="hover:text-blue-600 font-semibold cursor-pointer hover:scale-105 duration-200">
-  <RouterLink to="/premium" className="text-inherit no-underline">
+        <div className="font-semibold cursor-pointer hover:scale-105 duration-200">
+  <RouterLink
+    to="/premium"
+    className={({ isActive }) =>
+      `px-2 py-1 bg-[#e3e6f3] no-underline ${
+        isActive
+          ? "underline decoration-2 underline-offset-4 text-black"
+          : "hover:underline hover:text-blue-600"
+      }`
+    }
+  >
     Premium-Estimator
   </RouterLink>
 </div>
+
 
       </div>
 
