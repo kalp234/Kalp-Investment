@@ -208,7 +208,7 @@ const PremiumEstimator = () => {
 
       {/* Result Section */}
       {result && !loading && (
-        <div ref={resultRef} className="mt-6 text-gray-800 bg-zinc-50 w-1/1 p-4 mx-72 rounded border-2 border-blue-300">
+        <div ref={resultRef} className="mt-6 text-gray-800 bg-zinc-50 w-1/1 p-4 md:mx-72 rounded border-2 border-blue-300">
           <p>
             📅 Annual Premium: <strong>₹{result.annualPremium}</strong>
           </p>
