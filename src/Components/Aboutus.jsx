@@ -25,7 +25,7 @@ const Aboutus = () => {
             <h1 className="text-4xl md:text-4xl font-bold text-black">
               "Invest Now, Relax Later"
             </h1>
-            <h3 className="text-3xl pt-3 md:text-3xl md:text-right font-bold italic text-red-700 pb-4">
+            <h3 className="text-3xl pt-3  md:text-3xl md:text-right font-bold italic text-red-700 pb-4">
               - Kintal Shah
             </h3>
             <p className="py-6 max-w-2xl text-gray-900 text-start font-normal">

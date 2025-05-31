@@ -114,7 +114,7 @@ const Navbar = () => {
   <RouterLink
     to="/premium"
     className={({ isActive }) =>
-      `px-2 py-1 bg-[#e3e6f3] no-underline ${
+      `px-2 py-1 md:text-[14px] bg-[#e3e6f3] no-underline ${
         isActive
           ? "underline decoration-2 underline-offset-4 text-black"
           : "hover:underline hover:text-blue-600"

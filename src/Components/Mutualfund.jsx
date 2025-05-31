@@ -51,9 +51,9 @@ const Mutualfund = () => {
             <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
               📈 Why Invest in Mutual Funds
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
               {mutualFundSchemes.map((scheme, index) => (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center hover:scale-105 duration-500">
                   <img
                     src={scheme.image}
                     alt={`Scheme ${index + 1}`}
