@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom"; // ✅ Added for routing
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -34,14 +35,13 @@ const plans = [
     note: "✅ Markets corrected | Ideal time for lump sum investment",
   },
   {
-    image: LICBanner3, // Replace with Jeevan Labh plan image if available
+    image: LICBanner3,
     title: "🧾 LIC Jeevan Labh – Plan No. 736",
     features: [
       "📆 Pay for 16 years, relax for 9 years – Maturity at 25 years",
       "📊 Starting daily saving: ₹32 gives ₹5.77 lakh maturity",
       "💼 Total paid: ₹1,84,653 → Maturity: ₹5,77,500 | Profit: ₹3,92,847",
       "🛡️ Insurance coverage: ₹2.2 lakh to ₹16.5 lakh depending on plan",
-      // "📈 Higher daily savings → Up to ₹43.31 lakh maturity",
     ],
     note: "✅ Ideal for age 30 | High returns & risk cover | Trusted LIC Policy",
   },
@@ -53,10 +53,7 @@ const plans = [
       "📆 Deferred Pension (1 to 5 years)",
       "🧓 Entry Age: 30 to 79 years",
       "📊 Guaranteed Annuity Rates: 6.75% to 10.61%",
-      // "👫 Choice of Single or Joint Life Pension",
-      // "👨‍👩‍👧 Same Pension for the second life too",
       "💰 Minimum 105% of Purchase Price on Death",
-      // "📈 Extra 0.15% annuity rate for existing policyholders",
     ],
     note: "✅ Annuity Rates Revised w.e.f. 01.10.2024 | Ideal for Retirement Planning",
   },
@@ -76,9 +73,9 @@ const LIC = () => {
             </p>
           </div>
           <div className="mt-10 pl-1 md:pl-4 md:px-0 relative overflow-hidden">
-          <p className="md:hidden text-center text-sm text-gray-600 mb-4 animate-slide-left">
-    👉 Swipe left to view more plans<span className="ml-1 text-lg">»»</span>
-  </p>
+            <p className="md:hidden text-center text-sm text-gray-600 mb-4 animate-slide-left">
+              👉 Swipe left to view more plans<span className="ml-1 text-lg">»»</span>
+            </p>
             <Swiper
               modules={[Navigation, Pagination]}
               slidesPerView={1}
@@ -96,7 +93,7 @@ const LIC = () => {
                       <img
                         src={plan.image}
                         alt={`Plan ${index + 1}`}
-                        className="w-[300px]  h-[350px] md:w-[400px] md:h-[390px] object-cover rounded-xl shadow-md border border-2 border-gray-600"
+                        className="w-[300px] h-[350px] md:w-[400px] md:h-[390px] object-cover rounded-xl shadow-md border border-2 border-gray-600"
                       />
                       <div className="text-gray-700 space-y-4 w-full">
                         <h3 className="text-xl md:text-2xl font-semibold text-blue-900 pl-[33px] md:pl-0">
@@ -126,6 +123,26 @@ const LIC = () => {
               <div className="swiper-button-next hidden md:flex !text-black"></div>
             </Swiper>
           </div>
+
+ {/* Promo Banner */}
+<div
+  className="mt-12 text-center border-2 border-blue-400 bg-white p-6 md:rounded-full rounded-3xl shadow-md animate-glow md:hover:scale-105 duration-300 md:animate-shake animate-wiggle"
+>
+  <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
+    🎯 Want to estimate your returns?
+  </h2>
+  <p className="text-md md:text-lg text-gray-700 mt-2">
+    Try our easy-to-use LIC Premium Estimator and plan better!
+  </p>
+  <Link
+              to="/premium"
+              className="inline-block mt-4 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-full transition-all duration-300"
+            >
+              🚀 Check Now
+            </Link>
+</div>
+
+
         </div>
       </div>
     </div>

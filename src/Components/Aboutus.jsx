@@ -25,11 +25,11 @@ const Aboutus = () => {
             <h1 className="text-4xl md:text-4xl font-bold text-black">
               "Invest Now, Relax Later"
             </h1>
-            <h3 className="text-3xl pt-3  md:text-3xl md:text-right font-bold italic text-red-700 pb-4">
+            <h3 className="text-3xl pt-3  md:text-3xl md:text-right font-bold text-red-700 pb-4">
               - Kintal Shah
             </h3>
-            <p className="py-6 max-w-2xl text-gray-900 text-start font-normal">
-  "With years of expertise in the insurance industry, Kintal Shah is a dedicated and trusted advisor at <span className="font-extrabold italic underline text-green-700">Kalp Investment</span>. His deep understanding of financial planning and risk management enables him to provide tailored insurance solutions that secure the future of individuals and families. Committed to excellence and client satisfaction, he believes in guiding people toward informed decisions, ensuring their financial well-being and peace of mind."
+            <p className="py-6 max-w-2xl text-gray-900 text-start font-normal text-md ">
+  "With years of expertise in the insurance industry, Kintal Shah is a dedicated and trusted advisor at <span className="font-extrabold underline text-green-700">Kalp Investment</span>. His deep understanding of financial planning and risk management enables him to provide tailored insurance solutions that secure the future of individuals and families. Committed to excellence and client satisfaction, he believes in guiding people toward informed decisions, ensuring their financial well-being and peace of mind."
 </p>
 
           </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import "../App.css";
 import logo from "../images/logo.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -28,9 +30,25 @@ const Footer = () => {
 
         </div>
       </div>
-      <div className="text-center mt-6 border-t-2 mb-[-20px] md:mb-0 border-gray-500 pt-4 text-gray-700 font-medium text-sm">
-        <p>© 2025 Kalp Investment. All Rights Reserved.</p>
-      </div>
+    
+
+<div className="text-center mt-6 border-t-2 mb-[-20px] md:mb-0 border-gray-500 pt-4 text-gray-700 font-medium text-sm">
+  <p>© 2025 Kalp Investment. All Rights Reserved.</p>
+  <p className="mt-1 text-gray-700 flex justify-center items-center gap-1">
+    Made by
+    <a
+      href="https://www.linkedin.com/in/kalp0234" // 🔗 Replace with your LinkedIn profile link
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-1 font-semibold text-blue-700 hover:underline"
+    >
+  
+      Kalp Shah
+      <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4 mt-[-2px]" />
+    </a>
+  </p>
+</div>
+
     </footer>
   );
 };
