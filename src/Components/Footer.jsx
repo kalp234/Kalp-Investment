@@ -37,7 +37,7 @@ const Footer = () => {
   <p className="mt-1 text-gray-700 flex justify-center items-center gap-1">
     Made by
     <a
-      href="https://www.linkedin.com/in/kalp0234" // 🔗 Replace with your LinkedIn profile link
+      href="https://www.linkedin.com/in/kalpshah0234" // 🔗 Replace with your LinkedIn profile link
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-1 font-semibold text-blue-700 hover:underline"
