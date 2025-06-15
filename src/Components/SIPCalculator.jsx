@@ -85,7 +85,7 @@ const SIPCalculator = () => {
         {/* Left: Form */}
         <div className="w-full md:w-[360px]">
           <h2 className="text-2xl font-bold mb-4">SIP Calculator          
-          <i class="fa-solid fa-calculator ml-3"></i>
+          <i className="fa-solid fa-calculator ml-3"></i>
           </h2>
         
         
