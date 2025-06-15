@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
-import C1 from "../images/C1.webp";
-import C2 from "../images/C2.webp";
-import C3 from "../images/C3.webp";
-import C4 from "../images/C4.webp";
+import C1 from "../images/lic.webp";
+import C2 from "../images/lic2.jpg";
+import C3 from "../images/lic3.jpg";
+import C4 from "../images/lic4.png";
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,79 +21,31 @@ const Banner = () => {
     );
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      );
+    },4000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex, slides.length]);
+
   return (
     <div className="relative w-full md:pt-[5.4rem] pt-[5rem]" name="Home">
       <div className="relative h-[26rem] overflow-hidden rounded-sm md:h-[85vh]">
-        {currentIndex === 0 && (
-          <div className="relative w-full h-full">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`fade-slide ${currentIndex === index ? "active" : ""}`}
+          >
             <img
-              src={C1}
-              className="block w-full h-full object-cover"
-              alt="Slide 1"
+              src={slide}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full r"
             />
-            <div className="absolute inset-0 bg-white/50"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-center p-6 left-8">
-              <h1 className="text-2xl md:text-5xl font-bold text-blue-950 leading-tight md:leading-snug text-left">
-                Protect Your Family’s <br />
-                Future With <br />
-                Affordable Term Life <br />
-                Insurance.
-              </h1>
-            </div>
           </div>
-        )}
-
-        {currentIndex === 1 && (
-          <div className="relative w-full h-full">
-            <img
-              src={C2}
-              className="block w-full h-full object-cover"
-              alt="Slide 2"
-            />
-            <div className="absolute inset-0 bg-white/50"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-center p-6 left-8">
-              <h1 className="text-2xl md:text-5xl font-bold text-blue-950 leading-tight md:leading-snug text-left">
-                Secure Your Loved <br /> Ones With <br /> Reliable Insurance
-                Plans.
-              </h1>
-            </div>
-          </div>
-        )}
-
-        {currentIndex === 2 && (
-          <div className="relative w-full h-full">
-            <img
-              src={C3}
-              className="block w-full h-full object-cover"
-              alt="Slide 3"
-            />
-            <div className="absolute inset-0 bg-white/50"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-center p-6 left-8">
-              <h1 className="text-2xl md:text-5xl font-bold text-blue-950 leading-tight md:leading-snug text-left gap-4">
-                Plan Today,
-                <br /> Secure Tomorrow <br /> With Affordable Coverage.
-              </h1>
-            </div>
-          </div>
-        )}
-
-        {currentIndex === 3 && (
-          <div className="relative w-full h-full">
-            <img
-              src={C4}
-              className="block w-full h-full object-cover"
-              alt="Slide 4"
-            />
-            <div className="absolute inset-0 bg-white/50"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-center p-6 left-8">
-              <h1 className="text-2xl md:text-5xl font-bold text-blue-950 leading-tight md:leading-snug text-left">
-                Your Family’s <br />
-                Protection <br /> Starts With <br />
-                The Right Plan.
-              </h1>
-            </div>
-          </div>
-        )}
+        ))}
       </div>
 
       <button

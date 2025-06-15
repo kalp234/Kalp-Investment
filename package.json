@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
@@ -22,6 +23,7 @@
     "react-router-dom": "^7.2.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.3",
+    "recharts": "^2.15.3",
     "swiper": "^11.2.6",
     "web-vitals": "^2.1.4"
   },

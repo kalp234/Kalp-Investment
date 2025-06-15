@@ -35,6 +35,28 @@ li:focus, li:active, a:focus:not(:has(img)), a:active:not(:has(img)) {
   z-index: 10;
 }
 
+.custom-navbar .menu li > *:not(ul, .menu-title, details, .btn):active,
+.custom-navbar .menu li > *:not(ul, .menu-title, details, .btn).active,
+.custom-navbar .menu li > details > summary:active {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+.fade-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+
 /* Desktop View */
 @media (min-width: 1024px) {
   .swiper-button-prev {

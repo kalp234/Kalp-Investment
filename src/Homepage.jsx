@@ -6,6 +6,7 @@ import Aboutus from "./Components/Aboutus";
 import Services from "./Components/Services";
 import Mutualfund from "./Components/Mutualfund";
 import LIC from "./Components/LIC";
+import Mediclaim from "./Components/Mediclaim";
 import Footer from "./Components/Footer";
 import ScrollToTopButton from "./Components/Scrolltotopbutton";
 
@@ -17,6 +18,7 @@ function Homepage() {
       <Services />
       <Mutualfund />
       <LIC />
+      <Mediclaim />
       <Footer />
       <ScrollToTopButton />
     </div>

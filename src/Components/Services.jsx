@@ -6,6 +6,9 @@ import S3 from "../images/S3.png";
 import S4 from "../images/S4.png";
 import S5 from "../images/S5.png";
 import S6 from "../images/S6.png";
+import S7 from "../images/car.jpg";
+import S8 from "../images/post.jpg";
+import S9 from "../images/accident.jpg";
 
 const Services = () => {
   return (
@@ -18,34 +21,48 @@ const Services = () => {
         
         </div>
 
-        <div className="grid  w-full sm:grid-cols-3 gap-8 text-center py-8 px-7 md:px-12 sm:px-0 pt-14 ">
-          <div className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg items-center flex flex-col shadow-blue-700 bg-white">
-            <img src={S1} alt="" className="h-44 w-56 bg-transparent" />
+        <div className="grid w-full grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 pl-[0.75rem] pr-[1.75rem] md:px-12 sm:px-0 pt-14">
+
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-blue-700 bg-white">
+            <img src={S1} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
             <p className="mt-4 font-semibold">LIC Plans</p>
           </div>
-          <div className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg items-center flex flex-col shadow-red-700 bg-white">
-            <img src={S2} alt="" className="h-44 w-56 bg-transparent" />
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-[#ffc946] bg-white">
+            <img src={S2} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
             <p className="mt-4 font-semibold">Mutual Funds</p>
           </div>
-          <div className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg items-center flex flex-col shadow-orange-500 bg-white">
-            <img src={S3} alt="" className="h-44 w-56 bg-transparent" />
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-orange-500 bg-white">
+            <img src={S3} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
             <p className="mt-4 font-semibold">Mediclaim</p>
           </div>
-         
-          <div className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg items-center flex flex-col shadow-green-500 bg-white">
-            <img src={S4} alt="" className="h-44 w-56 bg-transparent" />
-            <p className="mt-4 font-semibold">Fixed Deposits</p>
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-red-500 bg-white">
+            <img src={S9} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
+            <p className="mt-4 font-semibold">Personal Accident</p>
+          </div>
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-blue-900 bg-white">
+            <img src={S5} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
+            <p className="mt-4 font-semibold">Travel Insurance</p>
           </div>
          
-          <div className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg items-center flex flex-col shadow-blue-900 bg-white">
-            <img src={S5} alt="" className="h-44 w-56 bg-transparent" />
-            <p className="mt-4 font-semibold">Overseas Insurance</p>
-          </div>
-         
-          <div className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg items-center flex flex-col shadow-blue-700 bg-white">
-            <img src={S6} alt="" className="h-44 w-56 bg-transparent" />
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-blue-700 bg-white">
+            <img src={S6} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
             <p className="mt-4 font-semibold">Home Insurance</p>
           </div>
+          <div className="shadow-md hover:scale-105 h-[210px]w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-blue-700 bg-white">
+            <img src={S7} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
+            <p className="mt-4 font-semibold">Car Insurance</p>
+          </div>
+       
+     
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-green-500 bg-white">
+            <img src={S4} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
+            <p className="mt-4 font-semibold">Fixed Deposits</p>
+          </div>
+          <div className="shadow-md hover:scale-105 h-[210px] w-[140px] md:w-full md:h-full duration-500 py-2 rounded-lg items-center flex flex-col shadow-red-700 bg-white">
+            <img src={S8} alt="" className="h-40 md:h-44 w-56 bg-transparent" />
+            <p className="mt-4 font-semibold">Post Office Schemes</p>
+          </div>
+        
          
          
         </div>

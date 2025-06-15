@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { NavLink as RouterLink, useLocation } from "react-router-dom";
 import Logo from "../images/logo-1.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const servicesRef = useRef(null);
 
   const links = [
     { id: 1, link: "Home" },
     { id: 2, link: "About" },
-    { id: 3, link: "Services" },
-    { id: 4, link: "Mutual Funds" },
-    { id: 5, link: "LIC Plans" },
+  ];
+
+  const servicesItems = [
+    { name: "Mutual Funds", id: "Mutual Funds" },
+    { name: "LIC Plans", id: "LIC Plans" },
+    { name: "Mediclaim", id: "Mediclaim" },
   ];
 
   useEffect(() => {
@@ -21,10 +26,33 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
+  // Close dropdown when clicking outside of it
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        servicesRef.current &&
+        !servicesRef.current.contains(event.target)
+      ) {
+        setServicesOpen(false);
+      }
+    }
+
+    if (servicesOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [servicesOpen]);
+
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
     <div className="navbar flex bg-[#e3e6f3] justify-between items-center p-5 md:p-0 lg:p-6 shadow-lg fixed top-0 left-0 z-[999] px-2 pr-4 md:pr-6 lg:pr-12 w-full">
+      {/* Mobile Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown relative">
           <button
@@ -46,33 +74,85 @@ const Navbar = () => {
               />
             </svg>
           </button>
+
           {isOpen && (
-            <ul className="menu menu-md dropdown-content bg-zinc-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute left-0">
+            <ul className="menu menu-md dropdown-content bg-zinc-100 rounded-box z-[1] mt-4 w-52 p-2 shadow absolute left-0">
               {links.map(({ id, link }) => (
                 <li
                   key={id}
                   onClick={toggleDropdown}
-                  className="hover:text-blue-600 cursor-pointer hover:scale-105 duration-200"
+                  className="hover:text-blue-600 cursor-pointer hover:scale-105 duration-200 font-semibold"
                 >
                   {location.pathname === "/" ? (
-                    <ScrollLink to={link} smooth duration={500}>
+                    <ScrollLink
+                      to={link}
+                      smooth
+                      duration={500}
+                      onClick={toggleDropdown}
+                    >
                       {link}
                     </ScrollLink>
                   ) : (
-                    <RouterLink to="/">{link}</RouterLink>
+                    <RouterLink to="/" onClick={toggleDropdown}>
+                      {link}
+                    </RouterLink>
                   )}
                 </li>
               ))}
-              <li
+
+              {/* Mobile Services Custom Dropdown */}
+              <div className="relative font-semibold text-inherit">
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className={`hover:text-blue-600 hover:scale-105 duration-200 w-full text-left flex justify-between items-center ${
+                    servicesOpen ? "bg-blue-600 text-white" : ""
+                  } px-3 py-1 rounded`}
+                >
+                  Services
+                  <svg
+                    className="w-4 h-4 ml-1 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                  </svg>
+                </button>
+                {servicesOpen && (
+                  <ul className="bg-white shadow-md rounded mt-4 w-56">
+                    {servicesItems.map(({ name, id }) => (
+                      <li key={id}>
+                        <ScrollLink
+                          to={id}
+                          smooth
+                          duration={500}
+                          onClick={() => {
+                            toggleDropdown();
+                            setServicesOpen(false);
+                          }}
+                          className="block px-4 py-2 cursor-pointer hover:bg-blue-600 hover:text-white rounded"
+                        >
+                          {name}
+                        </ScrollLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              <RouterLink
+                to="/sip"
                 onClick={toggleDropdown}
-                className="hover:text-blue-600 cursor-pointer hover:scale-105 duration-200"
+                className={`px-3 py-1 ml-[-3.2rem] rounded bg-transparent mt-[0.2rem] text-inherit font-semibold hover:text-blue-600 hover:scale-105 duration-200 ${
+                  location.pathname === "/sip" ? "bg-blue-600 text-white" : ""
+                }`}
               >
-                <RouterLink to="/premium">Premium-Estimator</RouterLink>
-              </li>
-             
+                SIP Calculator
+              </RouterLink>
             </ul>
           )}
         </div>
+
+        {/* Logo */}
         <div className="flex items-center">
           <RouterLink
             to="/"
@@ -93,12 +173,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="navbar-center hidden md:flex font-medium">
+      {/* Desktop Navbar Center */}
+      <div className="navbar-center hidden md:flex font-medium" ref={servicesRef}>
         <ul className="menu menu-horizontal px-1 gap-[1px]">
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="hover:text-blue-600 font-semibold cursor-pointer hover:scale-105 duration-200"
+              className="font-semibold cursor-pointer hover:scale-105 duration-200"
             >
               {location.pathname === "/" ? (
                 <ScrollLink to={link} smooth duration={500}>
@@ -109,25 +190,58 @@ const Navbar = () => {
               )}
             </li>
           ))}
+
+          {/* Desktop Services Dropdown */}
+          <li
+            className="relative font-semibold text-inherit"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              className={` hover:scale-105 duration-200 flex items-center px-3 py-2 rounded ${
+                servicesOpen ? "" : ""
+              }`}
+            >
+              Services
+              <svg
+                className="w-4 h-4 ml-0 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
+            {servicesOpen && (
+              <ul className="absolute bg-[#e3e6f3] border-2 border-gray-500 shadow-md rounded mt-[2.2rem] ml-[-0.2rem] z-50 w-30">
+                {servicesItems.map(({ name, id }) => (
+                  <li key={id}>
+                    <ScrollLink
+                      to={id}
+                      smooth
+                      duration={500}
+                      onClick={() => setServicesOpen(false)}
+                      className="block px-4 pr-2 mr-2 my-1 py-1 cursor-pointer rounded hover:bg-blue-600 hover:text-white"
+                    >
+                      {name}
+                    </ScrollLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+
+          <RouterLink
+            to="/sip"
+            className={`px-3 py-1 rounded text-md bg-transparent font-semibold mt-[0.3rem] text-inherit hover:text-blue-600 hover:scale-105 duration-200 ${
+              location.pathname === "/sip" ? "bg-blue-600 text-white" : ""
+            }`}
+          >
+            SIP Calculator
+          </RouterLink>
         </ul>
-        <div className="font-semibold cursor-pointer hover:scale-105 duration-200">
-  <RouterLink
-    to="/premium"
-    className={({ isActive }) =>
-      `px-2 py-1 md:text-[14px] bg-[#e3e6f3] no-underline ${
-        isActive
-          ? "underline decoration-2 underline-offset-4 text-black"
-          : "hover:underline hover:text-blue-600"
-      }`
-    }
-  >
-    Premium-Estimator
-  </RouterLink>
-</div>
-
-
       </div>
 
+      {/* Contact Me Button */}
       <div className="navbar-end pr-2 md:pr-0">
         <RouterLink
           to="/contact-me"

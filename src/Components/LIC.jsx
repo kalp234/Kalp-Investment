@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { Link } from "react-router-dom"; // ✅ Added for routing
+// import { Link } from "react-router-dom"; 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,6 +10,8 @@ import LICBanner1 from "../images/scheme3.jpeg";
 import LICBanner2 from "../images/scheme.png";
 import LICBanner3 from "../images/scheme4.jpeg";
 import LICBanner4 from "../images/scheme5.jpg";
+import LICBanner5 from "../images/scheme6.jpeg";
+import LICBanner6 from "../images/scheme8.jpeg";
 
 const plans = [
   {
@@ -56,6 +58,31 @@ const plans = [
       "💰 Minimum 105% of Purchase Price on Death",
     ],
     note: "✅ Annuity Rates Revised w.e.f. 01.10.2024 | Ideal for Retirement Planning",
+  },
+  {
+    image: LICBanner5,
+    title: "🧾 LIC Jeevan Utsav – Plan No. 871",
+    features: [
+      "💸 Limited Premium Payment – Lifetime Benefits",
+      "🎯 Choice of Income or Flexi Benefit Options",
+      "🧓 Entry Age: 90 days to 65 years",
+      "📆 Premium Payment Term: 5 to 16 years",
+      "📈 Guaranteed Additions: ₹50 per ₹1,000 SA (1st 5 years)",
+    ],
+    note: "✅ Whole Life Income Plan | Ideal for Long-Term Financial Planning & Legacy Building",
+  },
+  
+  {
+    image: LICBanner6,
+    title: "📊 LIC Index Plus – Plan No. 873",
+    features: [
+      "💼 Unit Linked, Non-Participating, Regular Premium Plan",
+      "📈 Index Fund-Based Returns (Flexi Cap & Index Funds)",
+      "🔁 Loyalty Additions from 6th Policy Year",
+      "🧒 Entry Age: 90 days to 60 years",
+      "💰 Partial Withdrawals Allowed after 5 Years",
+    ],
+    note: "✅ Ideal for Market-Linked Long-Term Wealth Creation | Tax Benefits under 80C & 10(10D)",
   },
 ];
 
@@ -125,7 +152,7 @@ const LIC = () => {
           </div>
 
  {/* Promo Banner */}
-<div
+{/* <div
   className="mt-12 text-center border-2 border-blue-400 bg-white p-6 md:rounded-full rounded-3xl shadow-md animate-glow md:hover:scale-105 duration-300 md:animate-shake animate-wiggle"
 >
   <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
@@ -140,7 +167,7 @@ const LIC = () => {
             >
               🚀 Check Now
             </Link>
-</div>
+</div> */}
 
 
         </div>
