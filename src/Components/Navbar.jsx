@@ -28,10 +28,7 @@ const Navbar = () => {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (
-        servicesRef.current &&
-        !servicesRef.current.contains(event.target)
-      ) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
         setServicesOpen(false);
       }
     }
@@ -75,56 +72,69 @@ const Navbar = () => {
           </button>
 
           {isOpen && (
-           <ul className="menu menu-md dropdown-content border-2 border-gray-400 bg-[#e3e6f3] z-50 rounded-box mt-4 w-52 p-2 shadow absolute left-2">
-           {links.map(({ id, link }, index) => (
-             <li
-               key={id}
-               onClick={toggleDropdown}
-               className={`hover:text-blue-600 cursor-pointer hover:scale-105 duration-200 font-semibold ${
-                 index !== links.length - 1 || servicesItems.length > 0 ? "border-b border-gray-500" : ""
-               }`}
-             >
-               {location.pathname === "/" ? (
-                 <ScrollLink to={link} smooth duration={500} onClick={toggleDropdown}>
-                   {link}
-                 </ScrollLink>
-               ) : (
-                 <RouterLink to="/" onClick={toggleDropdown}>
-                   {link}
-                 </RouterLink>
-               )}
-             </li>
-           ))}
-         
-           {servicesItems.map(({ name, id }, index) => (
-             <li
-               key={id}
-               onClick={toggleDropdown}
-               className={`hover:text-blue-600 cursor-pointer hover:scale-105 duration-200 font-semibold ${
-                 index !== servicesItems.length  ? "border-b border-gray-500" : ""
-               }`}
-             >
-               {location.pathname === "/" ? (
-                 <ScrollLink to={id} smooth duration={500} onClick={toggleDropdown}>
-                   {name}
-                 </ScrollLink>
-               ) : (
-                 <RouterLink to="/" onClick={toggleDropdown}>
-                   {name}
-                 </RouterLink>
-               )}
-             </li>
-           ))}
-         
-           <RouterLink
-             to="/sip"
-             onClick={toggleDropdown}
-             className={`px-2 py-1 ml-[-3rem] rounded bg-transparent mt-[0.2rem] font-semibold`}
-           >
-             SIP Calculator
-           </RouterLink>
-         </ul>
-         
+            <ul className="menu menu-md dropdown-content border-2 border-gray-400 bg-[#e3e6f3] z-50 rounded-box mt-4 w-52 p-2 shadow absolute left-2">
+              {links.map(({ id, link }, index) => (
+                <li
+                  key={id}
+                  onClick={toggleDropdown}
+                  className={`hover:text-blue-600 cursor-pointer hover:scale-105 duration-200 font-semibold ${
+                    index !== links.length - 1 || servicesItems.length > 0
+                      ? "border-b border-gray-500"
+                      : ""
+                  }`}
+                >
+                  {location.pathname === "/" ? (
+                    <ScrollLink
+                      to={link}
+                      smooth
+                      duration={500}
+                      onClick={toggleDropdown}
+                    >
+                      {link}
+                    </ScrollLink>
+                  ) : (
+                    <RouterLink to="/" onClick={toggleDropdown}>
+                      {link}
+                    </RouterLink>
+                  )}
+                </li>
+              ))}
+
+              {servicesItems.map(({ name, id }, index) => (
+                <li
+                  key={id}
+                  onClick={toggleDropdown}
+                  className={`hover:text-blue-600 cursor-pointer hover:scale-105 duration-200 font-semibold ${
+                    index !== servicesItems.length
+                      ? "border-b border-gray-500"
+                      : ""
+                  }`}
+                >
+                  {location.pathname === "/" ? (
+                    <ScrollLink
+                      to={id}
+                      smooth
+                      duration={500}
+                      onClick={toggleDropdown}
+                    >
+                      {name}
+                    </ScrollLink>
+                  ) : (
+                    <RouterLink to="/" onClick={toggleDropdown}>
+                      {name}
+                    </RouterLink>
+                  )}
+                </li>
+              ))}
+
+              <RouterLink
+                to="/sip"
+                onClick={toggleDropdown}
+                className={`px-2 py-1 ml-[-3rem] rounded bg-transparent mt-[0.2rem] font-semibold`}
+              >
+                SIP Calculator
+              </RouterLink>
+            </ul>
           )}
         </div>
 
@@ -150,7 +160,10 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navbar Center */}
-      <div className="navbar-center hidden md:flex font-medium" ref={servicesRef}>
+      <div
+        className="navbar-center hidden md:flex font-medium"
+        ref={servicesRef}
+      >
         <ul className="menu menu-horizontal px-1 gap-[1px]">
           {links.map(({ id, link }) => (
             <li
@@ -188,35 +201,53 @@ const Navbar = () => {
               </svg>
             </button>
             {servicesOpen && (
-             <ul className="absolute bg-[#e3e6f3] border-2 border-gray-500 shadow-md rounded-md mt-[2.2rem] ml-[-0.2rem] z-50 w-30">
-             {servicesItems.map(({ name, id }, index) => (
-               <li
-                 key={id}
-                 className={`${index !== servicesItems.length - 1 ? "border-b border-gray-500" : ""}`}
-               >
-                 <ScrollLink
-                   to={id}
-                   smooth
-                   duration={500}
-                   onClick={() => setServicesOpen(false)}
-                   className="block px-4 pr-2 mr-2 my-1 py-1 cursor-pointer rounded hover:bg-blue-600 hover:text-white"
-                 >
-                   {name}
-                 </ScrollLink>
-               </li>
-             ))}
-           </ul>
-           
+              <ul className="absolute bg-[#e3e6f3] border-2 border-gray-500 shadow-md rounded-md mt-[2.2rem] ml-[-0.2rem] z-50 w-30">
+                {servicesItems.map(({ name, id }, index) => (
+                  <li
+                    key={id}
+                    className={`${
+                      index !== servicesItems.length - 1
+                        ? "border-b border-gray-500"
+                        : ""
+                    }`}
+                  >
+                    {location.pathname === "/" ? (
+                      <ScrollLink
+                        to={id}
+                        smooth
+                        duration={500}
+                        onClick={() => setServicesOpen(false)}
+                        className="  block px-4 pr-2 mr-2 my-1 py-1 cursor-pointer rounded hover:bg-blue-600 hover:text-white"
+                      >
+                        {name}
+                      </ScrollLink>
+                    ) : (
+                      <RouterLink
+                        to={{
+                          pathname: "/",
+                          state: { scrollTo: id }, // 👈 send the section to scroll to
+                        }}
+                        className="block px-4 pr-2 mr-2 my-1 py-1 cursor-pointer rounded hover:bg-blue-600 hover:text-white"
+                        onClick={() => setServicesOpen(false)}
+                      >
+                        {name}
+                      </RouterLink>
+                    )}
+                  </li>
+                ))}
+              </ul>
             )}
           </li>
           <RouterLink
-  to="/sip"
-  className={`px-3 py-1 text-md rounded-md font-semibold mt-[0.3rem] text-inherit relative overflow-hidden transition-all duration-300 ease-in-out
-    ${location.pathname === "/sip" ? " " : " hover:bg-blue-600 hover:text-white"}
+            to="/sip"
+            className={`px-3 py-1 text-md rounded-md font-semibold mt-[0.3rem] text-inherit relative overflow-hidden transition-all duration-300 ease-in-out
+    ${
+      location.pathname === "/sip" ? " underline" : " hover:bg-blue-600 hover:text-white"
+    }
   `}
->
-  <span className="relative z-20">SIP Calculator</span>
-</RouterLink>
+          >
+            <span className="relative z-20">SIP Calculator</span>
+          </RouterLink>
         </ul>
       </div>
 
