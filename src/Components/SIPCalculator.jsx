@@ -96,7 +96,7 @@ const SIPCalculator = () => {
               className={`px-4 py-1 rounded-full ${
                 activeTab === "SIP"
                   ? "bg-green-100 text-green-600 font-semibold"
-                  : "text-gray-500"
+                  : "text-gray-600"
               }`}
               onClick={() => setActiveTab("SIP")}
             >
@@ -106,7 +106,7 @@ const SIPCalculator = () => {
               className={`px-4 py-1 rounded-full ${
                 activeTab === "Lumpsum"
                   ? "bg-green-100 text-green-600 font-semibold"
-                  : "text-gray-500"
+                  : "text-gray-600"
               }`}
               onClick={() => setActiveTab("Lumpsum")}
             >

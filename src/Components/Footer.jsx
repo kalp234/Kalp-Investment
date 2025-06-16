@@ -25,9 +25,14 @@ const Footer = () => {
             </span>
           </p>
           <p className="text-red-800 font-bold">
-            Email:{" "}
-            <span className="text-green-800"> kalpinvestment@gmail.com</span>
-          </p>
+  Email:{" "}
+  <a
+    href="mailto:kalpinvestment@gmail.com"
+    className="text-green-800 hover:underline"
+  >
+    kalpinvestment@gmail.com
+  </a>
+</p>
           <p className="text-red-800 font-bold">
             Hours:{" "}
             <span className="text-green-800">
@@ -36,8 +41,14 @@ const Footer = () => {
             </span>
           </p>
           <p className="text-red-800 font-bold">
-            Phone: <span className="text-green-800"> +91-9898488243</span>
-          </p>
+  Phone:{" "}
+  <a
+    href="tel:+919898488243"
+    className="text-green-800 hover:underline"
+  >
+    +91-9898488243
+  </a>
+</p>
         </div>
         <div className="w-full md:w-1/2 flex flex-col items-center lg:items-start md:ml-[4rem] p-4">
           <h4 className="text-xl  font-bold mb-3 border-b-2 border-gray-600 inline-block pb-1">

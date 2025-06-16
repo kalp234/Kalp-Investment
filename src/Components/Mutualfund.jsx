@@ -62,27 +62,39 @@ const Mutualfund = () => {
           </div>
 
           <div className="mt-12 md:pl-16 px-8 md:px-0">
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
-              📈 Why Invest in Mutual Funds
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-              {mutualFundSchemes.map((scheme, index) => (
-                <div
-                  key={index}
-                  className="text-center hover:scale-105 duration-500"
-                >
-                  <img
-                    src={scheme.image}
-                    alt={`Scheme ${index + 1}`}
-                    className="w-[300px] md:w-[400px] h-[350px] object-cover rounded-xl shadow-md"
-                  />
-                  <p className="mt-3 text-lg font-medium text-gray-700">
-                    {scheme.title}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+  <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+    📈 Why Invest in Mutual Funds
+  </h3>
+
+  {/* Swipe hint text with bounce animation on mobile */}
+  <p className="text-center text-gray-800 text-sm mt-2 md:hidden animate-shake pb-1">
+    Swipe to see more →
+  </p>
+  {/* Swipeable image container with snap and always visible scrollbar on mobile */}
+  <div className="relative">
+    <div className="flex  md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-4 overflow-x-scroll md:overflow-x-visible space-x-6 md:space-x-0 pb-4 md:pb-0 scroll-smooth snap-x md:snap-none snap-mandatory">
+      {mutualFundSchemes.map((scheme, index) => (
+        <div
+          key={index}
+          className="flex-shrink-0 md:flex-shrink-0 hover:scale-105 duration-500 snap-center"
+        >
+          <img
+            src={scheme.image}
+            alt={`Scheme ${index + 1}`}
+            className="w-[280px] h-[350px] object-cover rounded-xl shadow-md"
+          />
+          <p className="mt-3 text-lg font-medium text-gray-700 text-center px-2">
+            {scheme.title}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+ 
+</div>
+
+
 
           {/* Company Tie-ups Section */}
           <div className="mt-16">

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import C1 from "../images/lic.webp";
-import C2 from "../images/lic2.jpg";
-import C3 from "../images/lic3.jpg";
+import C2 from "../images/LIC-1.png";
+import C3 from "../images/LIC-2.jpg";
 import C4 from "../images/lic4.png";
 
 const Banner = () => {
@@ -26,7 +26,7 @@ const Banner = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       );
-    },4000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [currentIndex, slides.length]);
@@ -50,14 +50,14 @@ const Banner = () => {
 
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-2 md:left-4 z-30 transform -translate-y-1/2 md:bg-blue-400 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.6rem] rounded-full text-white md:font-bold"
+        className="absolute top-1/2 left-2 md:left-4 z-30 transform -translate-y-1/2 md:bg-blue-600 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.6rem] rounded-full text-white md:font-bold"
       >
         ❮
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-1 md:right-4 z-30 transform -translate-y-1/2 md:bg-blue-400 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.6rem] rounded-full text-white md:font-bold"
+        className="absolute top-1/2 right-1 md:right-4 z-30 transform -translate-y-1/2 md:bg-blue-600 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.6rem] rounded-full text-white md:font-bold"
       >
         ❯
       </button>

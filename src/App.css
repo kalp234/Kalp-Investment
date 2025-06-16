@@ -7,13 +7,20 @@
 .App {
   text-align: center;
 }
-li:focus, li:active, a:focus:not(:has(img)), a:active:not(:has(img)) {
-  background-color: rgb(50, 59, 193) !important;
-  outline: none !important;
+/* Remove global resets on li, a, etc. */
+/* Remove global resets on li, a, etc. */
+li:focus,
+li:active,
+a[href]:not([href^="mailto:"]):not([href^="tel:"]):focus,
+a[href]:not([href^="mailto:"]):not([href^="tel:"]):active,
+.reset-focus:focus,
+.reset-focus:active {
+  background-color: rgb(37, 99, 235) !important;
+  color: rgb(255, 255, 255) !important;
   box-shadow: none !important;
-  border-radius: 5px !important;
-  color: white !important;
+  outline: none !important;
 }
+
 
 /* Base Swiper Styles */
 .swiper {
@@ -90,6 +97,7 @@ li:focus, li:active, a:focus:not(:has(img)), a:active:not(:has(img)) {
     height: 40px;
   }
 }
+
 
 /* Mobile View */
 @media (max-width: 767px) {

@@ -60,7 +60,7 @@ function Contact() {
     <>
       <div className="flex items-center min-h-screen  bg-[#e3e6f3] pb-10">
         <div className="container mx-auto mt-20 ">
-          <div className="max-w-md mx-6 md:mx-auto my-10 bg-[#e3e6f3] border-gray-600 border  p-5 rounded-md shadow-sm">
+          <div className="max-w-md ml-4 mr-7 md:mx-auto my-10 bg-[#e3e6f3] border-gray-600 border p-5 rounded-md shadow-sm">
             <div className="text-center">
               <h1 className="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
                 Contact Us
