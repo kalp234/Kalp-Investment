@@ -6,7 +6,7 @@ const Aboutus = () => {
   return (
     <div
       name="About"
-      className="bg-[#e3e6f3] relative lg:pt-[3.9rem] pt-[6rem]"
+      className="bg-[#e3e6f3] relative lg:pt-[3.5rem] pt-[4.5rem]"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full min-h-screen">
         <div className="text-left">

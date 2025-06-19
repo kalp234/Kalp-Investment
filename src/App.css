@@ -7,18 +7,38 @@
 .App {
   text-align: center;
 }
-/* li:focus,
-li:active,
+
+/* li:active,
 a:focus,
 a:active,
-.reset-focus:focus,
-.reset-focus:active {
+button:focus,
+button:active {
   background-color: rgb(37, 99, 235) !important;
   color: rgb(255, 255, 255) !important;
   box-shadow: none !important;
   outline: none !important;
   padding: none !important;
 } */
+.menu :where(li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):not(summary, .active, .btn):focus,
+.menu :where(li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):not(summary, .active, .btn).focus,
+.menu :where(li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):is(summary):not(.active, .btn):focus-visible,
+.menu :where(li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(summary, .active, .btn):focus,
+.menu :where(li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(summary, .active, .btn).focus,
+.menu :where(li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):is(summary):not(.active, .btn):focus-visible {
+  background-color: transparent !important;
+  color: inherit !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.menu li > *:not(ul, .menu-title, details, .btn):active,
+.menu li > *:not(ul, .menu-title, details, .btn).active,
+.menu li > details > summary:active {
+  background-color: transparent !important;
+  color: inherit !important;
+  --tw-bg-opacity: 1 !important;
+  --tw-text-opacity: 1 !important;
+  box-shadow: none !important;
+}
 
 /* Base Swiper Styles */
 .swiper {

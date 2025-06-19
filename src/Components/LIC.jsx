@@ -13,6 +13,7 @@ import LICBanner4 from "../images/scheme5.jpg";
 import LICBanner5 from "../images/scheme6.jpeg";
 import LICBanner6 from "../images/scheme8.jpeg";
 
+
 const plans = [
   {
     image: LICBanner1,
@@ -90,8 +91,8 @@ const LIC = () => {
   return (
     <div>
       <div
-        name="LIC Plans"
-        className="bg-[#e3e6f3] relative md:pt-[6rem] pt-[5rem] md:pb-20 pb-20"
+        name="LIC Plans" id="LIC Plans"
+        className="bg-[#e3e6f3] relative md:pt-[5rem] pt-[4.5rem] md:pb-20 pb-20"
       >
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-left">
           <div>

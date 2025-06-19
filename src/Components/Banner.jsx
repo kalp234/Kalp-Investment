@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import C1 from "../images/lic.webp";
 import C2 from "../images/LIC-1.png";
-import C3 from "../images/LIC-2.jpg";
+import C3 from "../images/LIC-5.png";
 import C4 from "../images/lic4.png";
 
 const Banner = () => {
@@ -62,7 +62,7 @@ const Banner = () => {
         ❯
       </button>
 
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3">
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3 ">
         {slides.map((_, index) => (
           <button
             key={index}

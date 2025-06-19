@@ -12,7 +12,7 @@ import S9 from "../images/accident.jpg";
 
 const Services = () => {
   return (
-    <div name="Services" className="bg-[#e3e6f3] relative md:pt-[6rem] pt-[5rem]">
+    <div name="Services" className="bg-[#e3e6f3] relative md:pt-[5rem] pt-[4.5rem]">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-left">
         <div>
           <p className="text-2xl md:text-4xl font-bold p-2 border-b-4 border-gray-500 inline">

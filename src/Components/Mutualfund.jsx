@@ -12,6 +12,7 @@ import M6 from "../images/M6.jpg";
 import M7 from "../images/M7.webp";
 import M8 from "../images/M8.jpg";
 
+
 const mutualFundSchemes = [
   {
     image: Scheme1,
@@ -31,8 +32,8 @@ const Mutualfund = () => {
   return (
     <div>
       <div
-        name="Mutual Funds"
-        className="bg-[#e3e6f3] relative md:pt-[6rem] pt-[5rem] md:pb-20 pb-20"
+        name="Mutual Funds" id="Mutual Funds"
+        className="bg-[#e3e6f3] relative md:pt-[5rem] pt-[4.5rem] md:pb-20 pb-20"
       >
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-left">
           <div>
