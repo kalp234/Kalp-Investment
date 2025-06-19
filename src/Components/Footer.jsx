@@ -51,7 +51,7 @@ const Footer = () => {
 </p>
         </div>
         <div className="w-full md:w-1/2 flex flex-col items-center lg:items-start md:ml-[4rem] p-4">
-          <h4 className="text-xl  font-bold mb-3 border-b-2 border-gray-600 inline-block pb-1">
+          <h4 className="text-xl text-black  font-bold mb-3 border-b-2 border-gray-600 inline-block pb-1">
             Find Us:
           </h4>
           <div className="border-2 border-gray-500 rounded-lg overflow-hidden shadow-md w-full md:w-[25.3rem]">

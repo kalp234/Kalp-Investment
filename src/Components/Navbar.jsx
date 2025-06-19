@@ -61,12 +61,12 @@ const Navbar = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost lg:hidden"
+            className="btn btn-ghost lg:hidden text-black font-extrabold "
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -84,7 +84,7 @@ const Navbar = () => {
           {isOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content border-2 border-gray-500 bg-[#e3e6f3] rounded-box z-50 mt-3 w-52 p-2 gap-2 shadow"
+              className="menu menu-sm dropdown-content border-2 border-gray-500 bg-[#e3e6f3] rounded-box z-50 mt-3 w-52 p-2 gap-2 shadow text-black"
             >
               {links.map((link, idx) => (
                 <li key={idx} /* remove border classes here, so no lines */>
@@ -168,7 +168,7 @@ const Navbar = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
-          className="btn btn-ghost text-xl"
+          className="btn btn-ghost text-xl hover:bg-transparent hover:scale-110 duration-200 ease-out"
         >
           <img
             src={Logo}
@@ -184,7 +184,7 @@ const Navbar = () => {
           {links.map((link) => (
             <li
               key={link}
-              className="hover:bg-blue-600 hover:text-white rounded-md"
+              className="hover:bg-blue-600 hover:text-white text-black rounded-md"
             >
               <button onClick={() => handleNavigationAndScroll(link)}>
                 {link}
@@ -198,7 +198,7 @@ const Navbar = () => {
             onMouseEnter={() => setDesktopDropdownOpen(true)}
             onMouseLeave={() => setDesktopDropdownOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:bg-blue-600 hover:text-white rounded-md">
+            <button className="flex items-center gap-1 text-black hover:bg-blue-600 hover:text-white rounded-md">
               Products
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                 <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" />
@@ -209,7 +209,7 @@ const Navbar = () => {
                 {servicesItems.map(({ name, id }, idx) => (
                   <li
                     key={id}
-                    className={`hover:bg-blue-600 hover:text-white  ${
+                    className={`hover:bg-blue-600 hover:text-white text-black  ${
                       idx !== servicesItems.length - 1
                         ? "border-b border-gray-400"
                         : ""
@@ -224,7 +224,7 @@ const Navbar = () => {
             )}
           </li>
 
-          <li className="hover:bg-blue-600 hover:text-white rounded-md">
+          <li className="hover:bg-blue-600 hover:text-white text-black rounded-md">
             <RouterLink to="/sip">SIP Calculator</RouterLink>
           </li>
         </ul>

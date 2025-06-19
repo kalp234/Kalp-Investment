@@ -10,7 +10,7 @@ const Aboutus = () => {
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full min-h-screen">
         <div className="text-left">
-          <p className="md:text-4xl text-3xl font-bold p-2 border-b-4 border-gray-500 inline ">
+          <p className="md:text-4xl text-black text-3xl font-bold p-2 border-b-4 border-gray-500 inline ">
             About Us
           </p>
         

@@ -96,7 +96,7 @@ const LIC = () => {
       >
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-left">
           <div>
-            <p className="text-2xl md:text-4xl font-bold p-2 border-b-4 border-gray-500 inline">
+            <p className="text-2xl text-black md:text-4xl font-bold p-2 border-b-4 border-gray-500 inline">
               LIC Plans
             </p>
           </div>

@@ -22,7 +22,7 @@ const Mediclaim = () => {
     <div name="Mediclaim" id="Mediclaim" className="bg-[#e3e6f3] relative md:pt-[5rem] pt-[4.5rem] md:pb-20 pb-20">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-left">
         <div>
-          <p className="text-2xl md:text-4xl font-bold p-2 border-b-4 border-gray-500 inline">
+          <p className="text-2xl text-black md:text-4xl font-bold p-2 border-b-4 border-gray-500 inline">
             Mediclaim
           </p>
         </div>

@@ -84,7 +84,7 @@ const SIPCalculator = () => {
       >
         {/* Left: Form */}
         <div className="w-full md:w-[360px]">
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-2xl font-bold mb-4 text-black">
             SIP Calculator
             <i className="fa-solid fa-calculator ml-3"></i>
           </h2>
@@ -116,7 +116,7 @@ const SIPCalculator = () => {
           {/* Inputs */}
           {activeTab === "SIP" ? (
             <div className="mb-4">
-              <label className="block mb-1 font-medium">
+              <label className="block mb-1 font-medium text-black">
                 Monthly investment
               </label>
               <input
@@ -128,11 +128,11 @@ const SIPCalculator = () => {
                 onChange={(e) => setMonthly(Number(e.target.value))}
                 className="w-full"
               />
-              <div className=" font-bold mt-1">₹ {monthly}</div>
+              <div className=" font-bold mt-1 text-black">₹ {monthly}</div>
             </div>
           ) : (
             <div className="mb-4">
-              <label className="block mb-1 font-medium">Lump sum amount</label>
+              <label className="block mb-1 font-medium text-black">Lump sum amount</label>
               <input
                 type="range"
                 min="10000"
@@ -142,12 +142,12 @@ const SIPCalculator = () => {
                 onChange={(e) => setLumpSum(Number(e.target.value))}
                 className="w-full"
               />
-              <div className=" font-bold mt-1">₹ {lumpSum}</div>
+              <div className=" font-bold mt-1 text-black">₹ {lumpSum}</div>
             </div>
           )}
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium">
+            <label className="block mb-1 font-medium text-black">
               Expected return rate (p.a)
             </label>
             <input
@@ -158,11 +158,11 @@ const SIPCalculator = () => {
               onChange={(e) => setRate(Number(e.target.value))}
               className="w-full"
             />
-            <div className=" font-bold mt-1">{rate}%</div>
+            <div className=" font-bold mt-1 text-black">{rate}%</div>
           </div>
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium">
+            <label className="block mb-1 font-medium text-black">
               Time period (years)
             </label>
             <input
@@ -173,7 +173,7 @@ const SIPCalculator = () => {
               onChange={(e) => setYears(Number(e.target.value))}
               className="w-full"
             />
-            <div className="font-bold mt-1">{years} Yr</div>
+            <div className="font-bold mt-1 text-black">{years} Yr</div>
           </div>
 
           <button
