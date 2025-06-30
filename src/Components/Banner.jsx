@@ -50,14 +50,14 @@ const Banner = () => {
 
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-2 md:left-4 z-30 transform -translate-y-1/2 md:bg-blue-600 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.6rem] rounded-full text-white md:font-bold"
+        className="absolute top-1/2 left-2 md:left-4 z-30 transform -translate-y-1/2 md:bg-blue-600 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.8rem] rounded-full text-white md:font-bold"
       >
         ❮
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-1 md:right-4 z-30 transform -translate-y-1/2 md:bg-blue-600 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.6rem] rounded-full text-white md:font-bold"
+        className="absolute top-1/2 right-1 md:right-4 z-30 transform -translate-y-1/2 md:bg-blue-600 bg-blue-500 opacity-90 md:opacity-100 md:p-[1.25rem] p-[0.8rem] rounded-full text-white md:font-bold"
       >
         ❯
       </button>
