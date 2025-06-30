@@ -70,19 +70,29 @@ const SIPCalculator = () => {
 
   const data = result
     ? [
-        { name: "Invested : ", value: parseFloat(result.totalInvested) },
-        { name: "Est. returns :", value: parseFloat(result.estimatedReturns) },
+        { name: "Invested  ", value: parseFloat(result.totalInvested) },
+        { name: "Est. returns ", value: parseFloat(result.estimatedReturns) },
       ]
     : [];
+    const [isMobile, setIsMobile] = useState(false);
 
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+    
+      handleResize(); // Initial check
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    
   return (
     <div className="bg-[#e3e6f3] relative md:pt-[4rem] pt-[5rem]">
       <div
         className={`mt-12 bg-white rounded-lg shadow-xl mx-auto transition-all duration-500 flex flex-col md:flex-row p-6 gap-8 ${
           hasCalculated
-            ? " max-w-[21rem] mr-[2.5rem] ml-[1.5rem] md:mr-[5rem] md:ml-[5rem] md:max-w-5xl"
-            : " max-w-[20rem] mx-auto md:max-w-md md:mx-[22rem] lg:mx-[25rem] items-center text-center"
-
+            ? " max-w-[21rem] mx-auto md:mr-[5rem] md:ml-[5rem] md:max-w-5xl"
+            : " max-w-[20rem] mx-auto lg:mr-[27rem] lg:ml-[25rem] md:mr-[22rem] md:ml-[22rem] md:max-w-md items-center text-center"
         }`}
       >
         {/* Left: Form */}
@@ -234,57 +244,92 @@ const SIPCalculator = () => {
             </div>
 
             {/* Pie Chart */}
-            <div className="w-full max-w-md border-2 border-gray-300">
-              <ResponsiveContainer width="100%" height={325}>
-                <PieChart>
-                  <Pie
-                    data={data}
-                    dataKey="value"
-                    nameKey="name"
-                    innerRadius={60}
-                    outerRadius={90}
-                    labelLine={false}
-                    label={({ name, value, cx, cy, midAngle, outerRadius }) => {
-                      const RADIAN = Math.PI / 180;
-                      const radius = outerRadius + 20;
-                      const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                      const y = cy + radius * Math.sin(-midAngle * RADIAN);
-                      const labelColor = name.includes("Invested")
-                        ? "#3b82f6"
-                        : "#10b981";
-                      return (
-                        <text
-                          x={x}
-                          y={y}
-                          fill={labelColor}
-                          textAnchor={x > cx ? "start" : "end"}
-                          dominantBaseline="central"
-                          style={{ fontSize: "16px", fontWeight: "500" }}
-                        >
-                          <tspan x={x} dy="-0.6em">
-                            {name}
-                          </tspan>
-                          <tspan x={x} dy="1.2em">
-                            ₹{value.toLocaleString("en-IN")}
-                          </tspan>
-                        </text>
-                      );
-                    }}
-                  >
-                    {data.map((_, index) => (
-                      <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip
-                    formatter={(value, name) => [
-                      `₹${value.toLocaleString("en-IN")}`,
-                      name,
-                    ]}
-                  />
-                  <Legend verticalAlign="bottom" />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
+            <div className="w-full max-w-md border-2 border-gray-300 overflow-visible px-2">
+  <ResponsiveContainer width="100%" height={350}>
+    <PieChart
+      margin={{ top: 30, bottom: 20, left: 80, right: 80 }}
+    >
+      <Pie
+        data={data}
+        dataKey="value"
+        nameKey="name"
+        innerRadius={60}
+        outerRadius={90}
+        labelLine={false}
+        label={({ name, value, cx, cy, midAngle, outerRadius }) => {
+          if (window.innerWidth <= 768) return null; // ❌ No labels on mobile
+
+          const RADIAN = Math.PI / 180;
+          const radius = outerRadius + 24;
+          const x = cx + radius * Math.cos(-midAngle * RADIAN);
+          const y = cy + radius * Math.sin(-midAngle * RADIAN);
+          const labelColor = name.includes("Invested")
+            ? "#3b82f6"
+            : "#10b981";
+
+          return (
+            <text
+              x={x}
+              y={y}
+              fill={labelColor}
+              textAnchor={x > cx ? "start" : "end"}
+              dominantBaseline="central"
+              style={{ fontSize: "14px", fontWeight: 500 }}
+            >
+              <tspan x={x} dy="-0.6em">{name} :</tspan>
+              <tspan x={x} dy="1.2em">
+                ₹{value.toLocaleString("en-IN")}
+              </tspan>
+            </text>
+          );
+        }}
+      >
+        {data.map((_, index) => (
+          <Cell key={index} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+
+      {/* ✅ Tooltip only for desktop */}
+      {window.innerWidth > 768 && (
+        <Tooltip
+          formatter={(value, name) => [
+            `₹${value.toLocaleString("en-IN")}`,
+            name,
+          ]}
+        />
+      )}
+
+      {/* ✅ Legend: Customized for mobile */}
+      <Legend
+  verticalAlign="bottom"
+  iconSize={14}
+  content={({ payload }) => (
+    <div className="flex md:flex-row justify-center items-center  gap-2 md:gap-4  mt-2 text-sm font-medium md:text-base">
+      {payload.map((entry, index) => (
+        <div key={`item-${index}`} className="flex flex-row items-center space-x-1">
+          <span
+            className="inline-block w-4 h-3 rounded-full"
+            style={{ backgroundColor: entry.color }}
+          />
+          <span>
+            {entry.value}
+            {isMobile && `: ₹${data[index]?.value?.toLocaleString("en-IN")}`}
+          </span>
+        </div>
+      ))}
+    </div>
+  )}
+/>
+
+
+
+    </PieChart>
+  </ResponsiveContainer>
+</div>
+
+
+
+
           </div>
         )}
       </div>
