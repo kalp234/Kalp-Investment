@@ -14,7 +14,7 @@ import LICBanner5 from "../images/scheme6.jpeg";
 import LICBanner6 from "../images/scheme8.jpeg";
 
 
-const plans = [
+export const plans = [
   {
     image: LICBanner1,
     title: "🧾 Lifetime Tax-Free Guaranteed Pension",

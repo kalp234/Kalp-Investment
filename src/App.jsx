@@ -8,15 +8,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-[#e3e6f3]">
       <Router>
         <Navbar />
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact-me" element={<Contact />} />
-{/* <Route path="/premium" element={<PremiumEstimator/>}/> */}
-<Route path="/sip" element={<SIPCalculator/>}/>
+          {/* <Route path="/premium" element={<PremiumEstimator/>}/> */}
+          <Route path="/sip" element={<SIPCalculator />} />
         </Routes>
       </Router>
     </div>

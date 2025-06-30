@@ -27,10 +27,12 @@ const SIPCalculator = () => {
   const resultRef = useRef(null);
 
   useEffect(() => {
-    if (resultRef.current) {
+    const isMobile = window.innerWidth <= 768; // or 640 for strict mobile only
+    if (resultRef.current && isMobile) {
       resultRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [result]);
+  
 
   const calculate = () => {
     setResult(null);
@@ -132,7 +134,9 @@ const SIPCalculator = () => {
             </div>
           ) : (
             <div className="mb-4">
-              <label className="block mb-1 font-medium text-black">Lump sum amount</label>
+              <label className="block mb-1 font-medium text-black">
+                Lump sum amount
+              </label>
               <input
                 type="range"
                 min="10000"
@@ -178,9 +182,14 @@ const SIPCalculator = () => {
 
           <button
             onClick={calculate}
-            className="mt-0 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            disabled={loading}
+            className={`mt-0 px-6 py-2 rounded transition ${
+              loading
+                ? "bg-blue-400 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700 text-white"
+            }`}
           >
-            Calculate
+            {loading ? "Calculating..." : "Calculate"}
           </button>
 
           {loading && (

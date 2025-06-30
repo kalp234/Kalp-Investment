@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import K1 from "../images/K1.jpg";
+import K1 from "../images/K2.jpg";
 
 const Aboutus = () => {
   return (
