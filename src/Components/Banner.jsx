@@ -3,7 +3,7 @@ import "../App.css";
 import C1 from "../images/lic.webp";
 import C2 from "../images/LIC-1.png";
 import C3 from "../images/LIC-5.png";
-import C4 from "../images/lic4.png";
+import C4 from "../images/C4.webp";
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
