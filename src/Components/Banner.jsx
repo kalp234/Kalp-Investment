@@ -32,7 +32,7 @@ const Banner = () => {
   }, [currentIndex, slides.length]);
 
   return (
-    <div className="relative w-full md:pt-[5.4rem] pt-[5rem]" name="Home">
+    <div className="relative w-full md:pt-[5.4rem] pt-[5rem] " name="Home">
       <div className="relative h-[26rem] overflow-hidden rounded-sm md:h-[85vh]">
         {slides.map((slide, index) => (
           <div
@@ -42,7 +42,7 @@ const Banner = () => {
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full r"
+              className="w-full  h-full "
             />
           </div>
         ))}

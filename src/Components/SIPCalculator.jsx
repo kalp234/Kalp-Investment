@@ -308,7 +308,7 @@ const SIPCalculator = () => {
       {payload.map((entry, index) => (
         <div key={`item-${index}`} className="flex flex-row items-center space-x-1">
           <span
-            className="inline-block w-4 h-3 rounded-full"
+            className="inline-block w-6 h-3 rounded-full"
             style={{ backgroundColor: entry.color }}
           />
           <span>
