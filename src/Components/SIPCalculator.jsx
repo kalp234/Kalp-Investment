@@ -91,8 +91,8 @@ const SIPCalculator = () => {
       <div
         className={`mt-12 bg-white rounded-lg shadow-xl mx-auto transition-all duration-500 flex flex-col md:flex-row p-6 gap-8 ${
           hasCalculated
-            ? " max-w-[21rem] mx-auto md:mr-[5rem] md:ml-[5rem] md:max-w-5xl"
-            : " max-w-[20rem] mx-auto lg:mr-[27rem] lg:ml-[25rem] md:mr-[22rem] md:ml-[22rem] md:max-w-md items-center text-center"
+            ? "max-w-5xl mx-auto"
+            : "max-w-md mx-auto items-center text-center"
         }`}
       >
         {/* Left: Form */}
