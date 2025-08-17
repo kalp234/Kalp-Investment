@@ -7,6 +7,10 @@
 .App {
   text-align: center;
 }
+/* Force range input bar/track color to Tailwind blue-500 */
+input[type="range"] {
+  accent-color: #2563eb; /* Tailwind blue-600 */
+}
 
 /* li:active,
 a:focus,

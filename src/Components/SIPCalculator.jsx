@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import Footer from "./Footer";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "../App.css"
 
 const COLORS = ["#3b82f6", "#10b981"]; // Light for Invested, Dark for Returns
 
