@@ -71,7 +71,7 @@ function Contact() {
             </div>
             <div className="m-7">
               <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                <input type="hidden" name="access_key" value="36e897ab-964f-429e-965e-e8934ced8061" />
+                <input type="hidden" name="access_key" value="02fcc4d3-48a2-4958-8708-beae7f05ba1b" />
                 <input type="hidden" name="subject" value="New Submission from Web3Forms" />
                 <input type="checkbox" name="botcheck" id="" style={{ display: 'none' }} />
 
