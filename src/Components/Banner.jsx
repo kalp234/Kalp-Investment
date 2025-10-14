@@ -14,7 +14,7 @@ const Banner = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const allSlides = [C1, C2, C3, C4, C5,C6,C7,C8];
-  const desktopSlides = [C1, C2, C3, C4,C6];
+  const desktopSlides = [C1, C2, C3,C6];
   const slides = isMobile ? allSlides : desktopSlides;
 
   const prevSlide = () => {
