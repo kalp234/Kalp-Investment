@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // ✅ Added for routing
 import Scheme1 from "../images/scheme1.jpeg";
 import Scheme4 from "../images/scheme13.jpeg";
 import Scheme5 from "../images/scheme15.jpeg";
+import Scheme17 from "../images/scheme17.jpg";
 import M1 from "../images/M1.png";
 import M2 from "../images/M2.png";
 import M3 from "../images/M3.jpg";
@@ -11,7 +12,7 @@ import M5 from "../images/M5.png";
 import M6 from "../images/M6.jpg";
 import M7 from "../images/M7.webp";
 import M8 from "../images/M8.jpg";
-
+import M9 from "../images/M9.png";
 
 const mutualFundSchemes = [
   {
@@ -25,6 +26,9 @@ const mutualFundSchemes = [
   {
     image: Scheme5,
     // title: "💼 HDFC Balanced Advantage Fund – Hybrid Strategy",
+  },
+  {
+image:Scheme17
   },
 ];
 
@@ -42,15 +46,15 @@ const Mutualfund = () => {
             </p>
           </div>
 
-          <div className="mt-10 md:pl-16 px-8 md:px-0">
-            <p className="text-xl md:text-2xl font-semibold text-gray-800">
-              📊 Managed Portfolio: ₹10+ Crore
-            </p>
-            <p className="text-md text-gray-600 mt-2">
-              Under the expertise of Mr. Kintal Shah, Kalp Investment proudly
-              manages a diversified mutual fund portfolio of ₹10+ crore.
-            </p>
-          </div>
+      <div className="mt-10 md:pl-16 px-8 md:px-0">
+  <p className="text-xl md:text-2xl font-semibold text-gray-800">
+    📊 15+ Years of Trusted Experience
+  </p>
+  <p className="text-md text-gray-600 mt-2">
+    Under the expertise of Mr. Kintal Shah, Kalp Investment brings over 15 years of experience in providing expert financial guidance, diversified investment solutions, and SIP planning tailored for your growth.
+  </p>
+</div>
+
 
           <div className="mt-10 bg-yellow-300 text-black px-6 py-4 rounded-xl shadow-lg text-center text-xl md:text-2xl font-bold">
             🚀 Open Your SIP Account Online –{" "}
@@ -64,7 +68,7 @@ const Mutualfund = () => {
 
           <div className="mt-12 md:pl-16 px-8 md:px-0">
   <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
-    📈 Why Invest in Mutual Funds
+    📈 Why Invest in Mutual Funds ?
   </h3>
 
   {/* Swipe hint text with bounce animation on mobile */}
@@ -128,13 +132,42 @@ const Mutualfund = () => {
           </div>
 
           {/* Disclaimer Section */}
-          <div className="mt-11 text-center text-gray-900 md:text-lg text-sm">
-            <p>
-              "⚠️ Disclaimer: Mutual funds are subject to market risks. Please
-              read the offer document carefully before investing. Past
-              performance is not indicative of future results."
-            </p>
-          </div>
+       <div className="mt-11 text-gray-900 text-sm md:text-lg text-left md:text-center">
+  <p>
+    "⚠️ Disclaimer: Mutual funds are subject to market risks. Please
+    read the offer document carefully before investing. Past
+    performance is not indicative of future results."
+  </p>
+</div>
+
+<div className="mt-12 flex flex-col items-center px-4 md:px-0">
+  <div className="bg-white rounded-2xl shadow-xl p-4 md:p-10 max-w-4xl w-full border-2 border-blue-300 animate-glow hover:scale-105 transition-all duration-300">
+    
+    {/* Heading */}
+    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 text-center mb-4">
+      💰 Watch Your Money Grow with SIP
+    </h2>
+    <p className="text-gray-600 text-left sm:text-center text-sm sm:text-base md:text-lg mb-6">
+      See how your ₹10,000 investment can grow over 5 years at 12% returns!
+    </p>
+
+    {/* Example Image */}
+  <div className="flex justify-center mb-6 w-full">
+  <img
+    src={M9}
+    alt="Invest ₹10,000 for 5 years at 12% interest"
+    className="w-full sm:w-4/5 md:w-full h-auto border-2 rounded-md border-gray-300 shadow-lg object-contain"
+  />
+</div>
+
+
+    {/* Optional decorative element */}
+    <p className="text-xs sm:text-sm md:text-base text-gray-500 text-center mt-4">
+      Interactive & easy-to-use SIP calculator for planning your financial growth.
+    </p>
+  </div>
+</div>
+
 
           <div className="mt-12 text-center border-2 border-blue-400 bg-white p-6 md:rounded-full rounded-3xl shadow-md animate-glow md:hover:scale-105 duration-300 md:animate-shake animate-wiggle">
             <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
