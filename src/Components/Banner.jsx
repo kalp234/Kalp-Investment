@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import C1 from "../images/lic.webp";
 import C2 from "../images/LIC-1.png";
-import C3 from "../images/LIC-5.png";
+import C3 from "../images/licindexplus.png";
 import C4 from "../images/lic11.jpg";
 import C5 from "../images/scheme3new (2).jpeg";
 import C6 from "../images/term.png";
