@@ -236,7 +236,7 @@ const Navbar = () => {
           to="/contact-me"
           className="btn btn-primary text-white bg-blue-600 hover:bg-blue-700"
         >
-          Contact Me
+          Contact Us
         </RouterLink>
       </div>
     </div>

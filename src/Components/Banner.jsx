@@ -8,12 +8,13 @@ import C5 from "../images/scheme3new (2).jpeg";
 import C6 from "../images/term.png";
 import C7 from "../images/lic12.jpg";
 import C8 from "../images/lic13.jpg";
+import C9 from "../images/mediclaim1.jpg";
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  const allSlides = [C1, C2, C3, C4, C5,C6,C7,C8];
+  const allSlides = [C1, C2, C3, C4, C5,C6,C7,C8,C9];
   const desktopSlides = [C1, C2, C3,C6];
   const slides = isMobile ? allSlides : desktopSlides;
 
